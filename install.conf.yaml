@@ -4,20 +4,19 @@
       create: true
       glob: true
 - link:
-    ~/.config/compton.conf: compton.conf
-    ~/.config/conky/config: conky
-    ~/.config/nvim/init.vim: init.vim
-    ~/.config/nvim/coc-settings.json: coc-settings.json
-    ~/.config/picom/picom.conf: picom.conf
-    ~/.config/termite/config: termite.conf
-    ~/.config/sxhkd/: sxhkd/**
+    ~/.config/conky/config: conky/config
+    ~/.config/nvim/init.vim: vim/init.vim
+    ~/.config/nvim/coc-settings.json: vim/coc-settings.json
+    ~/.config/picom/picom.conf: picom/picom.conf
+    ~/.config/termite/config: terminals/termite.conf
+    ~/.config/sxhkd/sxhkdrc: sxhkd/sxhkdrc
     ~/.config/rofi/: rofi/**
     ~/.config/polybar/: polybar/**
     ~/.config/bspwm/: bspwm/**
-    ~/.config/gtk-3.0/settings.ini: gtk3.ini
-    ~/.config/alacritty/alacritty.yml: alacritty.yml
-    ~/.wallpapers/wallpaper.jpg: wallpaper.jpg
-    ~/.profile: profile
+    ~/.config/gtk-3.0/settings.ini: themes/gtk3.ini
+    ~/.config/alacritty/alacritty.yml: terminals/alacritty.yml
+    ~/.wallpapers/: wallpapers/**
+    ~/.profile: themes/qt
     ~/.themes/Fantome: gtk-theme-collections/Fantome
     ~/.themes/Lumiere: gtk-theme-collections/Lumiere
     ~/.themes/Noita: gtk-theme-collections/Noita
@@ -55,6 +54,5 @@
         stdout: true
         stderr: true
     - [sudo systemctl enable lightdm.service, Enabling lightdm]
-    - [bash plug.sh, Installing vim-plug and nvim plugins]
-    - [sudo cp lightdm.conf /etc/lightdm/lightdm.conf; sudo cp lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf; sudo cp wallpaper.jpg /usr/share/pixmaps/lightdm-background.jpg, Setting up lightdm] 
-
+    - [bash vim/plug.sh, Installing vim-plug and nvim plugins]
+    - [sudo cp lightdm/lightdm.conf /etc/lightdm/lightdm.conf; sudo cp lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf; sudo cp wallpapers/darkish.jpg /usr/share/pixmaps/lightdm-background.jpg, Setting up lightdm] 
