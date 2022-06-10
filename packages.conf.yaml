@@ -33,6 +33,6 @@
     - xdo
     - xdotool
     - xorg-xev
-    - xorg-xwinfo
+    - xorg-xwininfo
     - pipewire
     - helvum
