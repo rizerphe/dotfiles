@@ -63,8 +63,15 @@ label-layout = %name%
 label-layout-padding = 2
 label-layout-background = #ab4c566a
 label-layout-foreground = #ffffff
+
 [module/floating_button]
 type = custom/script
 interval = 0.5
 exec = ~/.config/polybar/scripts/floating_button.sh
 click-left = ~/.config/polybar/scripts/floating_button.sh --toggle
+
+[module/nvimcaps]
+type = custom/script
+interval = 0.5
+exec = ~/.config/polybar/scripts/nvimcaps.sh
+click-left = ~/.config/polybar/scripts/nvimcaps.sh --toggle

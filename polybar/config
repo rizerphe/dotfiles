@@ -27,7 +27,7 @@ module-margin-right = 4
 
 modules-left = floating_button workspaces
 modules-center = xwindow
-modules-right = xkeyboard audio date
+modules-right = xkeyboard audio date nvimcaps
 
 override-redirect = false
 wm-restack = bspwm
