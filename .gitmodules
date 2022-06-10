@@ -14,3 +14,6 @@
 [submodule "tiny-theme-switcher"]
 	path = theme-switcher/tiny-theme-switcher
 	url = git@github.com:rizerphe/tiny-theme-switcher.git
+[submodule "dotbot-xbps"]
+	path = dotbot-xbps
+	url = https://github.com/m-wynn/dotbot-xbps

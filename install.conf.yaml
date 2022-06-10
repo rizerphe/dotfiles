@@ -59,3 +59,42 @@
     - [sudo systemctl enable lightdm.service, Enabling lightdm]
     - [bash vim/plug.sh, Installing vim-plug and nvim plugins]
     - [sudo cp lightdm/lightdm.conf /etc/lightdm/lightdm.conf; sudo cp lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf; sudo cp wallpapers/darkish.jpg /usr/share/pixmaps/lightdm-background.jpg, Setting up lightdm] 
+- xbps:
+    - xorg-server
+    - xorg-xinit
+    - bspwm
+    - polybar
+    - feh
+    - rofi
+    - sxhkd
+    - pcmanfm
+    - xorg-xsetroot
+    - wget
+    - neofetch
+    - alsa-utils
+    - xorg-xrandr
+    - neovim
+    - lightdm
+    - lightdm-gtk-greeter
+    - python-pip
+    - termite
+    - adapta-gtk-theme
+    - paper-icon-theme
+    - lxappearance
+    - gpicview
+    - firefox
+    - nerd-fonts-hack
+    - android-file-transfer
+    - xarchiver
+    - yarn
+    - picom
+    - mplayer
+    - fzf
+    - kvantum-qt5
+    - qt5ct
+    - xdo
+    - xdotool
+    - xorg-xev
+    - xorg-xwinfo
+    - pipewire
+    - helvum
