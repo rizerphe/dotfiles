@@ -14,7 +14,7 @@ alt + space
 	python ~/.config/bspwm/scripts/layout.py
 # terminal emulator
 control + alt + t
-	termite
+	alacritty
 # program launcher
 alt + F2
     rofi -combi-modi window,drun -show combi -modi combi -show-icons -matching fuzzy -levenshtein-sort
