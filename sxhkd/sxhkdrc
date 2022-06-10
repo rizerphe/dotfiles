@@ -20,15 +20,14 @@ alt + F2
     rofi -combi-modi window,drun -show combi -modi combi -show-icons -matching fuzzy -levenshtein-sort
 alt + shift + F2
     rofi -run-command "sh -i -c {cmd}" -show run
+alt + shift + F1
+    rofi -show theme -modi theme:"python .config/tiny-theme-switcher/tiny-theme-switcher/rofi.py"
 # power menu
 control + alt + Delete
 	~/.config/bspwm/scripts/powermenu
 # print screen
-Print
-	scrot
-# screenshot only a single window
-shift + Print
-	scrot -u
+{_,shift + ,ctrl + ,alt + ,super + }Print
+	scrot "Pictures/screenshots/%Y-%m-%d_%H:%M:%S.png" -e "xclip -selection clipboard -t image/png -i \$f" {_,-u,-f -s,-e 'gimp $f',-e "pcmanfm Pictures/screenshots"}
 ################################
 #        BSPWM  HOTKEYS        #
 ################################
