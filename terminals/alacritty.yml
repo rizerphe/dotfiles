@@ -1,6 +1,10 @@
 font:
     family: "Nerd Hack Font"
     size: 8
+window:
+  padding:
+    x: 6
+    y: 6
 
 schemes:
   termite: &termite-theme
@@ -97,5 +101,32 @@ schemes:
       magenta: '#B48EAD'
       cyan:    '#8FBCBB'
       white:   '#ECEFF4'
+  light: &light-theme
+    # Default colors
+    primary:
+      background: '#FAFAFA'
+      foreground: '#323232'
 
-colors: *termite-theme
+    # Normal colors
+    normal:
+      black:   '#000000'
+      red:     '#FF3333'
+      green:   '#86B200'
+      yellow:  '#F19618'
+      blue:    '#41A6D9'
+      magenta: '#F07078'
+      cyan:    '#4CBE99'
+      white:   '#FFFFFF'
+
+    # Bright colors
+    bright:
+      black:   '#323232'
+      red:     '#ff6565'
+      green:   '#b8e532'
+      yellow:  '#ffc849'
+      blue:    '#73d7ff'
+      magenta: '#ffa3aa'
+      cyan:    '#7ff0cb'
+      white:   '#ffffff'
+
+colors: *nord-theme
