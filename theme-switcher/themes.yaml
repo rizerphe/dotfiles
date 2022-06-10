@@ -1,12 +1,12 @@
 nord:
   alacritty_theme: nord
-  gtk_theme: null
+  gtk_theme: nord
   polybar_theme: nord
   rofi_theme: nord
   wallpaper: /home/rizerphe/.wallpapers/nord.jpg
 darkish:
   alacritty_theme: termite
-  gtk_theme: null
+  gtk_theme: darkish
   polybar_theme: nord
   rofi_theme: nord
   wallpaper: /home/rizerphe/.wallpapers/darkish.jpg
