@@ -1,0 +1,190 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;==========================================================
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+[settings]
+compositing-overline = source
+compositing-underline = source
+screenchange-reload = true
+
+[bar/bar]
+monitor = ${env:MONITOR:}
+width = 100%
+height = 27
+offset-x = 0
+offset-y = -1 
+;bottom = true
+
+background = #ab000000
+foreground = #ffffff
+
+underline-size = 1
+underline-color = #ffffff
+
+spacing = 1
+padding-left = 0
+padding-right = 0
+module-margin-left = 0 
+module-margin-right = 4
+
+font-0 = Hack Nerd Font:pixelsize=11:antialias=true;2.5
+font-1 = Hack Nerd Font:style=Regular:pixelsize=17:antialias=true;3
+
+modules-left = battery workspaces xwindow
+modules-center = 
+modules-right = xkeyboard audio date
+
+;tray-position = right
+;tray-padding = 2
+;tray-background = #66333333
+
+wm-restack = bspwm
+
+[module/workspaces]
+type = internal/xworkspaces
+
+pin-workspaces = true
+
+enable-click = true
+
+enable-scroll = true
+
+format = <label-state>
+format-padding = 0
+
+label-monitor = %name%
+
+label-active = %name%
+label-active-foreground = #ffffff
+label-active-background = #ab000000
+label-active-overline = #ffffff
+;abel-active-underline = #ffffff
+
+label-occupied = %name%
+label-occupied-underline = #ffffff
+
+label-empty = %name%
+label-empty-foreground = #ffffff
+
+label-active-padding = 1
+label-urgent-padding = 1
+label-occupied-padding = 1
+label-empty-padding = 1
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:45:...%
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = " %d-%m"
+date-alt = " %d-%m-%Y"
+
+time = "%H:%M"
+time-alt = "%H:%M:%S"
+
+format-prefix = 
+format-prefix-foreground = #ffffff 
+format-underline = #0a6cf5
+
+label = %date% %time%
+
+[module/audio]
+type = internal/pulseaudio
+
+label-volume = %{F#666}墳%{F-} %percentage%%
+label-volume-foreground = ${root.foreground}
+
+label-muted = 婢 muted
+label-muted-foreground = #666
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = #ffffff 
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = #ffb52a
+
+format-discharging = <animation-discharging> <label-discharging>
+format-discharging-underline = #ffffff
+
+format-full-prefix = " "
+format-full-prefix-foreground = #ffffff
+format-full-underline = #ffffff
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = #ffffff 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = #ffffff
+animation-charging-framerate = 750
+
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-framerate = 750
+animation-discharging-foreground = #ffffff
+
+[module/wireless-network]
+type = internal/network
+interface = wlan1
+
+[module/xkeyboard]
+type = internal/xkeyboard
+
+; List of indicators to ignore
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+; Available tags:
+;   <label-layout> (default)
+;   <label-indicator> (default)
+format = <label-layout> <label-indicator>
+format-spacing = 0
+
+; Available tokens:
+;   %layout%
+;   %name%
+;   %number%
+;   %icon%
+; Default: %layout%
+label-layout = %name%
+label-layout-padding = 2
+label-layout-background = #000000
+label-layout-foreground = #ffffff

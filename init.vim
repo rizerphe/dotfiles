@@ -2,7 +2,7 @@ set nocompatible
 
 let g:coc_disable_startup_warning = 1
 
-call plug#begin('~/.config/nvim')
+call plug#begin('~/.config/nvim/plug')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'preservim/nerdtree'
 "  Plug 'sheerun/vim-polyglot'

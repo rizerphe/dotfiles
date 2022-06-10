@@ -1,0 +1,38 @@
+#!/bin/sh
+rofi_command="rofi -show"
+
+uptime=$(uptime -p | sed -e 's/up //g')
+
+# Options
+shutdown="Shut Down\0icon\x1fsystem-shutdown"
+reboot="Reboot\0icon\x1fsystem-restart\n"
+suspend="Suspend\0icon\x1fsystem-suspend\n"
+logout="Log Out\0icon\x1fsystem-log-out\n"
+
+# Variable passed to rofi
+options="$suspend$logout$reboot$shutdown"
+
+shutdown="Shut Down"
+reboot="Reboot"
+suspend="Suspend"
+logout="Log Out"
+
+chosen="$(echo -e "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-row 0)"
+echo $chosen
+case $chosen in
+    $shutdown)
+        systemctl poweroff
+        ;;
+    $reboot)
+        systemctl reboot
+        ;;
+    $suspend)
+        mpc -q pause
+        amixer set Master mute
+        systemctl suspend
+        ;;
+    $logout)
+        pkill -KILL -u $USER
+        ;;
+esac
+
