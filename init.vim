@@ -7,7 +7,7 @@ call plug#begin('~/.config/nvim/plug')
   Plug 'preservim/nerdtree'
 "  Plug 'sheerun/vim-polyglot'
   Plug 'mbbill/undotree'
-  Plug 'ambv/black'
+  Plug 'a-vrma/black-nvim'
   Plug 'ryanoasis/vim-devicons'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -22,6 +22,8 @@ call plug#begin('~/.config/nvim/plug')
 "  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  Plug 'arcticicestudio/nord-vim'
+  Plug 'chrisbra/Colorizer'
 call plug#end()
 
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
@@ -35,7 +37,7 @@ let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = ['^node_modules$']
 
 nnoremap <F5> :UndotreeToggle<CR>
-nnoremap <F2> :Black<CR>
+nnoremap <F2> :call CocAction('format')<CR>
 nnoremap <F3> :MinimapToggle<CR>
 nnoremap <F4> :NERDTreeToggle<CR>
 nnoremap <C-p> :GFiles<CR>
@@ -47,7 +49,7 @@ let g:fzf_action = {
   \}
 
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ]
       \ },

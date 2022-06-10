@@ -8,3 +8,6 @@
 [submodule "dotbot-pip"]
 	path = dotbot-pip
 	url = https://github.com/sobolevn/dotbot-pip.git
+[submodule "gtk-theme-collections"]
+	path = gtk-theme-collections
+	url = git@github.com:addy-dclxvi/gtk-theme-collections.git

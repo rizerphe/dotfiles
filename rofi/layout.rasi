@@ -27,16 +27,16 @@ configuration{
 }
 
 #element {
-    padding: 16;
+    padding: 8;
     border: 0 0 0 0;
     border-color: @separatorcolor;
     background-color: @backgroundcoloralternate;
+    border-radius: 10px;
 }
 
 #element.selected.normal {
     background-color: @selectioncolor;
     text-color: @foregroundcolorinverse;
-    border-radius: 10px;
 
     border: 0 0 0 0;
     border-color: @separatorcolor;

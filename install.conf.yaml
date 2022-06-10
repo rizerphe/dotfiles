@@ -15,7 +15,16 @@
     ~/.config/polybar/: polybar/**
     ~/.config/bspwm/: bspwm/**
     ~/.config/gtk-3.0/settings.ini: gtk3.ini
+    ~/.config/alacritty/alacritty.yml: alacritty.yml
     ~/.wallpapers/wallpaper.jpg: wallpaper.jpg
+    ~/.profile: profile
+    ~/.themes/Fantome: gtk-theme-collections/Fantome
+    ~/.themes/Lumiere: gtk-theme-collections/Lumiere
+    ~/.themes/Noita: gtk-theme-collections/Noita
+    ~/.themes/Ocha: gtk-theme-collections/Ocha
+    ~/.themes/Sephia: gtk-theme-collections/Sephia
+    ~/.themes/Tee: gtk-theme-collections/Tee
+    ~/.themes/Vestica: gtk-theme-collections/Vestica
 - create:
     ~/Projects:
 - clean: ['~']

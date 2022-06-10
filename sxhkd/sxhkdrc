@@ -8,7 +8,7 @@ alt + control + q
 
 # change language
 alt + space
-	.config/sxhkd/scripts/layout
+	python ~/.config/bspwm/Scripts/layout.py
 
 # terminal emulator
 control + alt + t
@@ -19,7 +19,7 @@ alt + F2
 	rofi -combi-modi window,drun -show combi -modi combi -show-icons -matching fuzzy -levenshtein-sort
 # file explorer
 control + shift + e
-	nautilus
+	pcmanfm
 
 # brightness keys
 super + F4

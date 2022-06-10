@@ -1,14 +1,13 @@
-
 /**
  * Author: Primetoxinz
  */
 * {
     text-color:                  #f2f2f2;
-    background-color:            #4e4743;
-    lightbg:                     #534c48;
-    red:                         #f15d22;
-    orange:                      #faa41a; 
-    blue:                        #48b9c7; 
+    background:                  #4c566a66;
+    lightbg:                     #ffffff;
+    red:                         #bf616a33;
+    green:                       #8fbcbb33;
+    blue:                        #81a1c133;
 
     selected-normal-foreground:  @foreground;
     normal-foreground:           @foreground;
@@ -23,14 +22,14 @@
     bordercolor:                 @foreground;
     normal-background:           @background;
     selected-normal-background:  @blue;
-    separatorcolor:              @orange;
+    separatorcolor:              @green;
     spacing:                     2;
     urgent-background:           @red;
     alternate-urgent-foreground: @foreground;
     selected-urgent-background:  @red;
     alternate-active-foreground: @foreground;
     selected-active-background:  @blue;
-    active-background:           @orange;
+    active-background:           @green;
 }
 #listview {
     spacing: 4;
@@ -42,8 +41,7 @@
 #window {
     border:     0;
     text-color: @foreground;
-    background-color: rgba ( 0, 0, 0, 0 % );
-    padding:    5;
+    padding:    2;
     text-color: @bordercolor;
     background-color: @background;
 }

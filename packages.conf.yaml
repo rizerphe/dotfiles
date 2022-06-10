@@ -23,12 +23,17 @@
     - gpicview
     - firefox
     - nerd-fonts-hack
-    - gimp
     - android-file-transfer
     - xarchiver
     - yarn
-    - blender
     - picom
     - mplayer
-    - code-headmelted-bin
     - fzf
+    - kvantum-qt5
+    - qt5ct
+    - xdo
+    - xdotool
+    - xorg-xev
+    - xorg-xwinfo
+    - pipewire
+    - helvum
