@@ -8,7 +8,6 @@
     - sxhkd
     - pcmanfm
     - xorg-xsetroot
-    - x11-xkb-utils
     - wget
     - neofetch
     - alsa-utils

@@ -32,7 +32,12 @@
         stdin: true
         stdout: true
         stderr: true
-    - [./dotbot/bin/dotbot -p dotbot-yay/yay.py -c packages.conf.yaml, Installing packages]
+    -
+        command: ./dotbot/bin/dotbot -p dotbot-yay/yay.py -c packages.conf.yaml
+        description: Installing packages
+        stdout: true
+        stderr: true
     - [sudo systemctl enable lightdm.service, Enabling lightdm]
     - [bash plug.sh, Installing vim-plug and nvim plugins]
+    - [sudo cp lightdm.conf /etc/lightdm/lightdm.conf; sudo cp lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf, Setting up lightdm] 
 
