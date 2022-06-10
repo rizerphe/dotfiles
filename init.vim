@@ -15,7 +15,7 @@ call plug#begin('~/.config/nvim')
   Plug 'itchyny/lightline.vim'
   Plug 'mengelbrecht/lightline-bufferline'
   Plug 'severin-lemaignan/vim-minimap'
-  Plug 'SirVer/ultisnips'
+"  Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
   Plug 'jiangmiao/auto-pairs'
   Plug 'mlaursen/vim-react-snippets'
