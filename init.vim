@@ -84,6 +84,9 @@ set whichwrap+=<,>,[,]
 
 hi MatchParen ctermbg=none ctermfg=green
 
+set tabstop=4 shiftwidth=4 expandtab
+
+set clipboard=unnamedplus
 set mouse=a
 " source ~/.config/nvim/cocrc.vim
 source ~/.nvimrc
