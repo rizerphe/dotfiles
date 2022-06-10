@@ -14,6 +14,7 @@
     ~/.config/polybar/: polybar/**
     ~/.config/bspwm/: bspwm/**
     ~/.config/gtk-3.0/settings.ini: gtk3.ini
+    ~/.wallpapers/wallpaper.jpg: wallpaper.jpg
 - create:
     ~/Projects:
 - clean: ['~']
@@ -39,5 +40,5 @@
         stderr: true
     - [sudo systemctl enable lightdm.service, Enabling lightdm]
     - [bash plug.sh, Installing vim-plug and nvim plugins]
-    - [sudo cp lightdm.conf /etc/lightdm/lightdm.conf; sudo cp lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf, Setting up lightdm] 
+    - [sudo cp lightdm.conf /etc/lightdm/lightdm.conf; sudo cp lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf; sudo cp wallpaper.jpg /usr/share/pixmaps/lightdm-background.jpg, Setting up lightdm] 
 
