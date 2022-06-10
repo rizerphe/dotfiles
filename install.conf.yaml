@@ -41,7 +41,7 @@
     stderr: true
 - shell:
     -
-        command: sudo pacman -Syu base-devel
+        command: sudo pacman -Syu --noconfirm base-devel
         description: Updating the system, installing base-devel
         stdin: true
         stdout: true
