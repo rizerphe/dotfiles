@@ -54,25 +54,29 @@ let g:lightline = {
       \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'tabline': {
-      \   'left': [ ['buffers'] ],
-      \   'right': [ ['close'] ]
+      \   'left': [['tabs'], ['close']],
+      \   'right': []
+      \ },
+      \ 'tab': {
+      \   'active': ['filename', 'modified'],
+      \   'inactive': ['filename', 'modified']
       \ },
       \ 'component_expand': {
       \   'buffers': 'lightline#bufferline#buffers'
       \ },
       \ 'component_type': {
-      \   'buffers': 'tabsel'
+      \   'buffers': 'tabsel',
       \ }
       \ }
 autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
 
 :set number relativenumber
-
 :augroup numbertoggle
 :  autocmd!
 :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
+:set fillchars+=vert:\ 
 
 " set guicursor=i:var1
 autocmd InsertEnter * set guicursor+=a:blinkon1
@@ -80,10 +84,11 @@ autocmd InsertLeave * set guicursor+=a:blinkon0
 :autocmd FileType nerdtree set norelativenumber
 :autocmd FileType taglist set norelativenumber
 
+:set showtabline=2
+
 autocmd BufEnter * if(exists('t:NERDTreeBufName') && bufname('%') == t:NERDTreeBufName) | set nornu | endif
 
 set whichwrap+=<,>,[,]
-
 hi MatchParen ctermbg=none ctermfg=green
 
 set tabstop=4 shiftwidth=4 expandtab
