@@ -1,2 +1,4 @@
-@import "layout.rasi"
-@import "themes/nord.rasi"
+
+                @import "layout.rasi"
+                @import "themes/nord.rasi"
+                

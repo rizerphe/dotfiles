@@ -24,6 +24,7 @@
     ~/.themes/Sephia: gtk-theme-collections/Sephia
     ~/.themes/Tee: gtk-theme-collections/Tee
     ~/.themes/Vestica: gtk-theme-collections/Vestica
+    ~/.config/tiny-theme-switcher: theme-switcher/**
 - create:
     ~/Projects:
 - clean: ['~']

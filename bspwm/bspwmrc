@@ -5,7 +5,7 @@ sh $HOME/.config/bspwm/scripts/polybarStart.sh &
 # And the keyboard chortcuts manager
 sxhkd &
 # Set a wallpaper
-feh --bg-fill $HOME/.wallpapers/$(ls $HOME/.wallpapers| shuf -n 1) 
+feh --bg-fill `python ~/.config/tiny-theme-switcher/tiny-theme-switcher/main.py theme get --field wallpaper`
 rm -rf $HOME/.fehbg
 # Set the desktop cursor to be left-pointer
 xsetroot -cursor_name left_ptr

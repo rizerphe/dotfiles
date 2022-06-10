@@ -11,3 +11,6 @@
 [submodule "gtk-theme-collections"]
 	path = gtk-theme-collections
 	url = git@github.com:addy-dclxvi/gtk-theme-collections.git
+[submodule "tiny-theme-switcher"]
+	path = theme-switcher/tiny-theme-switcher
+	url = git@github.com:rizerphe/tiny-theme-switcher.git
