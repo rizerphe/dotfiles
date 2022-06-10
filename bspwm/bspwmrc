@@ -5,8 +5,8 @@ sh $HOME/.config/bspwm/scripts/polybarStart.sh &
 # And the keyboard chortcuts manager
 sxhkd &
 # Set a wallpaper
-feh --bg-fill /home/$USER/.wallpapers/$(ls $HOME/.wallpapers| shuf -n 1) 
-rm -rf /home/$USER/.fehbg
+feh --bg-fill $HOME/.wallpapers/$(ls $HOME/.wallpapers| shuf -n 1) 
+rm -rf $HOME/.fehbg
 # Set the desktop cursor to be left-pointer
 xsetroot -cursor_name left_ptr
 # Setup a few workspaces

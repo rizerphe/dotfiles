@@ -16,7 +16,7 @@ control + alt + t
 
 # program launcher
 alt + F2
-	rofi -combi-modi window,drun -show combi -modi combi -show-icons -matching fuzzy -levenshtein-sort
+    rofi -combi-modi window,drun,run -run-command "sh -i -c '{cmd}'" -show combi -modi combi -show-icons -matching fuzzy -levenshtein-sort
 # file explorer
 control + shift + e
 	pcmanfm
