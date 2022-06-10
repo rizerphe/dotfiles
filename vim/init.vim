@@ -74,9 +74,9 @@ autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
-set guicursor=i:ver1
-autocmd InsertEnter * set guicursor=a:blinkon1
-autocmd InsertLeave * set guicursor=a:blinkon0
+" set guicursor=i:var1
+autocmd InsertEnter * set guicursor+=a:blinkon1
+autocmd InsertLeave * set guicursor+=a:blinkon0
 :autocmd FileType nerdtree set norelativenumber
 :autocmd FileType taglist set norelativenumber
 

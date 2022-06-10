@@ -1,0 +1,10 @@
+background = #4f4f4f6a
+foreground = #a5abb6
+underline-color = #ffffff
+
+label-active-foreground = #ffffff
+label-active-underline = #ffffff
+label-occupied-underline = #ffffff
+
+font-0 = Hack Nerd Font:pixelsize=11:antialias=true;2.5
+font-1 = Hack Nerd Font:style=Regular:pixelsize=17:antialias=true;3

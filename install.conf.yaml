@@ -15,11 +15,6 @@
     ~/.config/polybar/: polybar/**
     ~/.config/bspwm/: bspwm/**
     ~/.config/gtk-3.0/: themes/gtk/**
-    ~/.config/gtk-3.0/settings.ini: themes/gtk/darkish.ini
-    ~/.config/gtk-3.0/settingsrc: themes/gtk/darkishrc
-    ~/.config/gtk-3.0/settingsrc.mine: themes/gtk/darkishrc.mine
-    ~/.gtkrc-2.0: ~/.config/gtk-3.0/settingsrc
-    ~/.gtkrc-2.0.mine: ~/.config/gtk-3.0/settingsrc.mine
     ~/.config/alacritty/alacritty.yml: terminals/alacritty.yml
     ~/.wallpapers/: wallpapers/**
     ~/.profile: themes/qt

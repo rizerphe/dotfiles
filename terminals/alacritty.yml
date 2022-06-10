@@ -98,4 +98,4 @@ schemes:
       cyan:    '#8FBCBB'
       white:   '#ECEFF4'
 
-colors: *termite-theme
+colors: *nord-theme

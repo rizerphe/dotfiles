@@ -1,8 +1,8 @@
 darkish:
   alacritty_theme: termite
   gtk_theme: darkish
-  polybar_theme: nord
-  rofi_theme: nord
+  polybar_theme: darkish
+  rofi_theme: darkish
   vscode_theme: null
   wallpaper: /home/rizerphe/.wallpapers/darkish.jpg
 nord:
