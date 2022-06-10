@@ -1,5 +1,0 @@
-# !/bin/sh
-
-for m in $(xrandr | grep " connected" | cut -f1 -d " "); do
-    xrandr --output $m --brightness  $(xrandr --verbose | grep Bright |head -n1|awk ' { print ($2 + 0.1)}')
-done

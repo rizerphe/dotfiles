@@ -1,134 +1,70 @@
-#
-# wm independent hotkeys
-#
-
-#log out
-alt + control + q
-	pkill -KILL -u $USER
-
-# change language
-alt + space
-	python ~/.config/bspwm/scripts/layout.py
-
-# terminal emulator
-control + alt + t
-	termite
-
-# program launcher
-alt + F2
-    rofi -combi-modi window,drun,run -run-command "sh -i -c '{cmd}'" -show combi -modi combi -show-icons -matching fuzzy -levenshtein-sort
-# file explorer
-control + shift + e
-	pcmanfm
-
-# brightness keys
-super + F4
-	bash $HOME/.config/sxhkd/scripts/incBrightness
-super + F3
-	bash $HOME/.config/sxhkd/scripts/decBrightness
-
-# power menu
-control + alt + Delete
-	~/.config/bspwm/scripts/powermenu
-super + Escape
-	~/.config/bspwm/scripts/powermenu
-
+################################
+#        SXHKD  HOTKEYS        #
+################################
 # make sxhkd reload its configuration files:
 super + control + Escape
 	pkill $USER -x sxhkd
 control + alt + Escape
 	pkill $USER -x sxhkd
-
-#
-# bspwm hotkeys
-#
-
-# quit/restart bspwm
-control + shift + {q,r}
-	bspc {quit,wm -r}
-
-# close and kill
-alt + {_,shift + }w
-	bspc node -{c,k}
+################################
+#        GLOBAL HOTKEYS        #
+################################
+# keyboard layout
+alt + space
+	python ~/.config/bspwm/scripts/layout.py
+# terminal emulator
+control + alt + t
+	termite
+# program launcher
+alt + F2
+    rofi -combi-modi window,drun -show combi -modi combi -show-icons -matching fuzzy -levenshtein-sort
+alt + shift + F2
+    rofi -run-command "sh -i -c {cmd}" -show run
+# power menu
+control + alt + Delete
+	~/.config/bspwm/scripts/powermenu
+# print screen
+Print
+	scrot
+# screenshot only a single window
+shift + Print
+	scrot -u
+################################
+#        BSPWM  HOTKEYS        #
+################################
+# close a window
 alt + F4
 	bspc node -c
-
 # alternate between the tiled and monocle layout
+# AKA maximize
 alt + m
 	bspc desktop -l next
-
-# send the newest marked node to the newest preselected node
-alt + y
-	bspc node newest.marked.local -n newest.!automatic.local
-
-# swap the current node and the biggest node
-alt + g
-	bspc node -s biggest
-
-#
-# state/flags
-#
-
-# set the window state
+# set the window mode
 alt + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
-
-# set the node flags
-alt + ctrl + {m,x,y,z}
-	bspc node -g {marked,locked,sticky,private}
-
-#
-# focus/swap
-#
-#focus on next monitor
-alt + alt + w
-        bspc monitor -f next
-
 # focus the last node/desktop
 alt + {grave,Tab}
 	bspc {node,desktop} -f last
-
-# focus the older or newer node in the focus history
-alt + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
-
-#cycle trough monitor workspaces
+# cycle trough monitor workspaces
 alt + button{4,5}
     bspc desktop {next,prev}.occupied -f
 alt + button2
     bspc desktop any.!occupied -f
-
 # focus or send to the given desktop
 alt + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
-
-#
-# preselect
-#
-
+# Preselection
 # preselect the direction
-alt + ctrl + {h,j,k,l}
+alt + {h,j,u,k}
 	bspc node -p {west,south,north,east}
-
 # preselect the ratio
 alt + ctrl + {1-9}
 	bspc node -o 0.{1-9}
-
 # cancel the preselection for the focused desktop
+alt + ctrl + 0
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 alt + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
-
-#
-# move/resize
-#
-
 # expand a window by moving one of its side outward
-alt + alt + {h,j,k,l}
+control + alt + {h,j,u,k}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-control + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-
-Print
-	scrot
