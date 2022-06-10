@@ -16,7 +16,6 @@
     - lightdm
     - lightdm-gtk-greeter
     - python-pip
-    - termite
     - adapta-gtk-theme
     - paper-icon-theme
     - lxappearance
