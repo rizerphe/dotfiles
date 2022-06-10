@@ -1,18 +1,7 @@
-;==========================================================
-;
-;
-;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-;
-;
-;==========================================================
 [global/wm]
 margin-top = 0
-margin-bottom = 0
+
+include-file="~/.config/polybar/modules"
 
 [settings]
 compositing-overline = source
@@ -20,123 +9,25 @@ compositing-underline = source
 screenchange-reload = true
 
 [bar/floating]
+include-file="~/.config/polybar/colors"
+
 monitor = ${env:MONITOR:}
 width = 80%
 height = 27
 offset-x = 10%
 offset-y = 10
-;bottom = true
-radius = 10
-
-border-size=0
-border-color=#ffffff
-
-background = #ab4c566a
-foreground = #ffffff
-
 underline-size = 1
-underline-color = #ffffff
-
+radius = 10
+border-size=0
 spacing = 1
 padding-left = 1
 padding-right = 1
 module-margin-left = 0 
 module-margin-right = 4
 
-font-0 = Hack Nerd Font:pixelsize=11:antialias=true;2.5
-font-1 = Hack Nerd Font:style=Regular:pixelsize=17:antialias=true;3
-
 modules-left = floating_button workspaces
 modules-center = xwindow
 modules-right = xkeyboard audio date
 
-;tray-position = right
-;tray-padding = 2
-;tray-background = #66333333
-
 override-redirect = false
 wm-restack = bspwm
-
-[module/workspaces]
-type = internal/xworkspaces
-pin-workspaces = true
-enable-click = true
-enable-scroll = true
-
-format = <label-state>
-format-padding = 1
-
-label-monitor = %name%
-
-label-active-foreground = #88c0d0
-label-active-underline = #ffffff
-label-occupied-underline = #ffffff
-
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:45:...%
-
-[module/date]
-type = internal/date
-interval = 1
-date = " %d-%m-%Y"
-time = "%H:%M:%S"
-format-prefix = 
-label = %date% %time%
-
-[module/audio]
-type = internal/pulseaudio
-
-label-volume = %{F#666}墳%{F-} %percentage%%
-label-volume-foreground = ${root.foreground}
-
-label-muted = 婢 muted
-label-muted-foreground = #666
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = #ffffff 
-
-[module/xkeyboard]
-type = internal/xkeyboard
-
-; List of indicators to ignore
-blacklist-0 = num lock
-blacklist-1 = scroll lock
-; Available tags:
-;   <label-layout> (default)
-;   <label-indicator> (default)
-format = <label-layout> <label-indicator>
-format-spacing = 0
-
-; Available tokens:
-;   %layout%
-;   %name%
-;   %number%
-;   %icon%
-; Default: %layout%
-label-layout = %name%
-label-layout-padding = 2
-label-layout-background = #ab4c566a
-label-layout-foreground = #ffffff
-
-[module/floating_button]
-type = custom/script
-interval = 0.5
-exec = ~/.config/polybar/scripts/floating_button.sh
-click-left = ~/.config/polybar/scripts/floating_button.sh --toggle
-

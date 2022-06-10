@@ -1,0 +1,70 @@
+[module/workspaces]
+type = internal/xworkspaces
+pin-workspaces = true
+enable-click = true
+enable-scroll = true
+include-file="~/.config/polybar/colors"
+format = <label-state>
+format-padding = 1
+label-monitor = %name%
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:45:...%
+
+[module/date]
+type = internal/date
+interval = 1
+date = " %d-%m-%Y"
+time = "%H:%M:%S"
+format-prefix = 
+label = %date% %time%
+
+[module/audio]
+type = internal/pulseaudio
+label-volume = %{F#666}墳%{F-} %percentage%%
+label-volume-foreground = ${root.foreground}
+label-muted = 婢 muted
+label-muted-foreground = #666
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = #ffffff 
+
+[module/xkeyboard]
+type = internal/xkeyboard
+; List of indicators to ignore
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+; Available tags:
+;   <label-layout> (default)
+;   <label-indicator> (default)
+format = <label-layout> <label-indicator>
+format-spacing = 0
+; Available tokens:
+;   %layout%
+;   %name%
+;   %number%
+;   %icon%
+; Default: %layout%
+label-layout = %name%
+label-layout-padding = 2
+label-layout-background = #ab4c566a
+label-layout-foreground = #ffffff
+[module/floating_button]
+type = custom/script
+interval = 0.5
+exec = ~/.config/polybar/scripts/floating_button.sh
+click-left = ~/.config/polybar/scripts/floating_button.sh --toggle
