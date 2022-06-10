@@ -8,7 +8,7 @@ alt + control + q
 
 # change language
 alt + space
-	python ~/.config/bspwm/Scripts/layout.py
+	python ~/.config/bspwm/scripts/layout.py
 
 # terminal emulator
 control + alt + t
@@ -29,9 +29,9 @@ super + F3
 
 # power menu
 control + alt + Delete
-	~/.config/bspwm/Scripts/powermenu
+	~/.config/bspwm/scripts/powermenu
 super + Escape
-	~/.config/bspwm/Scripts/powermenu
+	~/.config/bspwm/scripts/powermenu
 
 # make sxhkd reload its configuration files:
 super + control + Escape

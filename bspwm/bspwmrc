@@ -1,22 +1,20 @@
 #! /bin/sh
 
-sh $HOME/.config/bspwm/Scripts/polybarStart.sh &
-
+# Launch the floating polybar
+sh $HOME/.config/bspwm/scripts/polybarStart.sh &
+# And the keyboard chortcuts manager
 sxhkd &
-
-sh $HOME/.config/bspwm/Scripts/monitorBrightness.sh &
-
+# Set a wallpaper
 feh --bg-fill /home/$USER/.wallpapers/$(ls $HOME/.wallpapers| shuf -n 1) 
 rm -rf /home/$USER/.fehbg
-
+# Set the desktop cursor to be left-pointer
 xsetroot -cursor_name left_ptr
-
-sh $HOME/.config/bspwm/Scripts/workspaces.sh
-
+# Setup a few workspaces
+sh $HOME/.config/bspwm/scripts/workspaces.sh
+# Start a compositor
 picom &
 
-amixer set Master toggle
-
+# bspwm style
 bspc config border_width         1
 bspc config window_gap           5
 bspc config focus_follows_pointer true
@@ -38,5 +36,3 @@ bspc config pointer_action1 move
 bspc config pointer_action2 resize_side
 
 bspc config top_padding 0
-
-picom &
