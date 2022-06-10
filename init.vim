@@ -20,6 +20,8 @@ call plug#begin('~/.config/nvim/plug')
   Plug 'jiangmiao/auto-pairs'
   Plug 'mlaursen/vim-react-snippets'
 "  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
 call plug#end()
 
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>

@@ -1,0 +1,5 @@
+pylint
+jedi
+black
+numpy
+youtube-dl
