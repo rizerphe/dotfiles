@@ -47,7 +47,7 @@
         stdout: true
         stderr: true
     -
-        command: git clone https://aur.archlinux.org/yay-git.git; chmod 777 yay-git; cd yay-git; makepkg -si; cd ..; rm -rf yay-git
+        command: git clone https://aur.archlinux.org/yay-git.git; chmod 777 yay-git; cd yay-git; makepkg -si --noconfirm; cd ..; rm -rf yay-git
         description: Installing yay
         stdin: true
         stdout: true
