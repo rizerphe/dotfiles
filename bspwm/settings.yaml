@@ -1,3 +1,7 @@
 layouts:
- - gb
- - ua
+ - name: us
+ - name: ua
+   mods:
+   - type: modmap
+     keycode: 12
+     chars: 3 numbersign
