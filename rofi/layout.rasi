@@ -7,14 +7,14 @@ configuration{
 #window {
     background-color: @background;
     border: 0;
-    border-radius: 8px;
+    border-radius: @win-border-radius;
 }
 
 #element {
     padding: 6;
     border: 0;
     text-color: @text-color;
-    border-radius: 8px;
+    border-radius: @win-border-radius;
 }
 
 #element.normal.normal {
@@ -56,7 +56,7 @@ configuration{
 }
 
 #scrollbar.handle{
-    width: 8px;
+    width: @scrollbar-width;
     background-color: @transparent;
     border-color: @foreground;
     border: 1;

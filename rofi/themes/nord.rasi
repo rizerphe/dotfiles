@@ -1,12 +1,14 @@
 * {
     background:                  #3B425277;
-    transparent:                 #00000000;
     lightbg:                     #434C5E;
     active:                      #8FBCBB;
     foreground:                  #D8DEE9;
+    transparent: #00000000;
 
     text-color: @foreground;
     border-color: @foreground;
     background-selected: @lightbg;
     text-active: @active;
+    win-border-radius: 8px;
+    scrollbar-width: 8px;
 }
