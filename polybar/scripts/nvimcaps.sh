@@ -1,5 +1,8 @@
 #!/bin/bash
 
+if [ ! -f "$HOME/.config/polybar/.nvimb-lock.txt" ]; then
+    echo 0 > "$HOME/.config/polybar/.nvimb-lock.txt"
+fi
 
 function toggleCaps() {
     if [ `cat ~/.config/polybar/.nvimb-lock.txt` == "1" ] ; then
