@@ -3,3 +3,6 @@ jedi
 black
 numpy
 youtube-dl
+pyyaml
+click
+xdg
