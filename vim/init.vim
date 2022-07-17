@@ -16,7 +16,7 @@ call plug#begin('~/.config/nvim/plug')
   Plug 'mengelbrecht/lightline-bufferline'
   Plug 'severin-lemaignan/vim-minimap'
 "  Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
+"  Plug 'honza/vim-snippets'
   Plug 'jiangmiao/auto-pairs'
   Plug 'mlaursen/vim-react-snippets'
 "  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -24,23 +24,34 @@ call plug#begin('~/.config/nvim/plug')
   Plug 'junegunn/fzf.vim'
   Plug 'arcticicestudio/nord-vim'
   Plug 'chrisbra/Colorizer'
+  Plug 'github/copilot.vim'
 call plug#end()
 
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
 autocmd VimEnter * NERDTree | wincmd p
+autocmd VimEnter * ++nested belowright 10split term://bash | wincmd p
 autocmd BufWinEnter * NERDTreeMirror
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = ['^node_modules$']
 
+" Close the terminal if it is the second to last window (the last window is NERDTree)
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 2 && &buftype == 'terminal' |
+    \ quit |
+    \ if exists('b:NERDTree') && b:NERDTree.isTabTree() |
+        \ quit | endif | endif
+" Enter terminal mode on mouse click
+autocmd TermOpen * nnoremap <buffer><LeftRelease> <LeftRelease>i
+
 nnoremap <F5> :UndotreeToggle<CR>
 nnoremap <F2> :call CocAction('format')<CR>
 nnoremap <F3> :MinimapToggle<CR>
 nnoremap <F4> :NERDTreeToggle<CR>
 nnoremap <C-p> :GFiles<CR>
+nnoremap <F6> :belowright 10split term://bash<CR>
 
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
