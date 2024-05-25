@@ -1,181 +1,33 @@
 {
-  "languageserver": {
-    "ccls": {
-      "command": "ccls",
-      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
-      "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
-      "initializationOptions": {
-        "cache": {
-          "directory": "/tmp/ccls"
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+            "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
         }
-      }
-    }
-  },
-  "suggest.noselect": false,
-  "coc.preferences.formatOnSaveFiletypes": [],
-  "java.inlayHints.parameterNames.enabled": "all",
+    },
+    "suggest.noselect": false,
+    "coc.preferences.formatOnSaveFiletypes": [],
 
-  "python": {
-    "formatting": {
-      "provider": "black"
-    },
-    "sortImports": {
-      "path": "~/.local/bin/isort"
-    },
-    "linting": {
-      "enabled": true,
-      "flake8Enabled": true,
-      "mypyEnabled": true,
-      "pylintEnabled": true
-    }
-  },
-
-  "diagnostic-languageserver.formatFiletypes": {
-    "python": ["black", "isort", "docformatter"],
-    "javascript": ["prettier"],
-    "typescript": ["prettier"],
-    "typescriptreact": ["prettier"],
-    "css": ["prettier"],
-    "scss": ["prettier"],
-    "sass": ["prettier"],
-    "yaml": ["prettier"],
-    "json": ["prettier"],
-    "rust": ["rustfmt"]
-  },
-  "diagnostic-languageserver.formatters": {
-    "black": {
-      "command": "black",
-      "args": ["-q", "-"]
-    },
-    "isort": {
-      "command": "isort",
-      "args": ["-q", "-"]
-    },
-    "docformatter": {
-      "command": "docformatter",
-      "args": ["-"]
-    },
-    "prettier": {
-      "command": "prettier",
-      "args": ["--stdin-filepath", "%filepath"],
-      "rootPatterns": [
-        ".prettierrc",
-        ".prettierrc.json",
-        ".prettierrc.toml",
-        ".prettierrc.json",
-        ".prettierrc.yml",
-        ".prettierrc.yaml",
-        ".prettierrc.json5",
-        ".prettierrc.js",
-        ".prettierrc.cjs",
-        "prettier.config.js",
-        "prettier.config.cjs"
-      ]
-    },
-    "rustfmt": {
-      "command": "rustfmt",
-      "args": []
-    }
-  },
-
-  "diagnostic.checkCurrentLine": true,
-
-  "diagnostic-languageserver.filetypes": {
-    "python": ["pylint", "flake8", "mypy"]
-  },
-  "diagnostic-languageserver.linters": {
-    "pylint": {
-      "sourceName": "pylint",
-      "command": "pylint",
-      "debounce": 100,
-      "args": [
-        "--output-format",
-        "text",
-        "--score",
-        "no",
-        "--msg-template",
-        "'{line}:{column}:{category}:{msg} ({msg_id}:{symbol})'",
-        "%file"
-      ],
-      "formatPattern": [
-        "^(\\d+?):(\\d+?):([a-z]+?):(.*)$",
-        {
-          "line": 1,
-          "column": 2,
-          "endColumn": 2,
-          "security": 3,
-          "message": 4
+    "python": {
+        "formatting": {
+            "provider": "black"
+        },
+        "sortImports": {
+            "path": "~/.local/bin/isort"
+        },
+        "linting": {
+            "enabled": true,
+            "flake8Enabled": true,
+            "mypyEnabled": true,
+            "pylintEnabled": true
         }
-      ],
-      "rootPatterns": ["pyproject.toml", "setup.py", ".git"],
-      "securities": {
-        "informational": "hint",
-        "refactor": "info",
-        "convention": "info",
-        "warning": "warning",
-        "error": "error",
-        "fatal": "error"
-      },
-      "offsetColumn": 1,
-      "offsetColumnEnd": 1,
-      "formatLines": 1
     },
-    "flake8": {
-      "sourceName": "flake8",
-      "command": "flake8",
-      "debounce": 200,
-      "rootPatterns": [".git", "pyproject.toml", "setup.py"],
-      "args": [
-        "--ignore=E203,E402,C901,W503,W504,E116,E702,C0103,C0114,C0115,C0116,C0103,C0301,W0613,W0102,R0903,R0902,R0914,R0915,R0205,W0703,W0702,W0603,ANN101,ANN102,DAR402",
-        "--format=%(row)d,%(col)d,%(code).1s,%(code)s: %(text)s",
-        "--max-line-length=88",
-        "--max-complexity=10",
-        "--mypy-init-return",
-        "-"
-      ],
-      "offsetLine": 0,
-      "offsetColumn": 0,
-      "formatLines": 1,
-      "formatPattern": [
-        "(\\d+),(\\d+),([A-Z]),(.*)(\\r|\\n)*$",
-        {
-          "line": 1,
-          "column": 2,
-          "security": 3,
-          "message": 4
-        }
-      ],
-      "securities": {
-        "W": "info",
-        "E": "warning",
-        "F": "info",
-        "C": "info",
-        "N": "hint"
-      }
-    },
-    "mypy": {
-      "sourceName": "mypy",
-      "command": "mypy",
-      "args": [
-        "--no-color-output",
-        "--no-error-summary",
-        "--show-column-numbers",
-        "--follow-imports=silent",
-        "%file"
-      ],
-      "formatPattern": [
-        "^.*:(\\d+?):(\\d+?): ([a-z]+?): (.*)$",
-        {
-          "line": 1,
-          "column": 2,
-          "security": 3,
-          "message": 4
-        }
-      ],
-      "securities": {
-        "error": "error"
-      }
-    }
-  },
-  "snippets.ultisnips.pythonPrompt": false
+
+    "snippets.ultisnips.pythonPrompt": false
 }

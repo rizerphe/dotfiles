@@ -6,17 +6,20 @@
       force: true
 - link:
     ~/.config/conky/config: conky/config
-    ~/.config/nvim/init.vim: vim/init.vim
+    ~/.config/nvim/init.lua: vim/init.lua
+    ~/.config/nvim/config/: vim/config/**
     ~/.config/nvim/coc-settings.json: vim/coc-settings.json
+    ~/.prettierrc: prettierrc
     ~/.config/picom/picom.conf: picom/picom.conf
     ~/.config/termite/config: terminals/termite.conf
     ~/.config/sxhkd/sxhkdrc: sxhkd/sxhkdrc
     ~/.config/rofi/: rofi/**
     ~/.config/polybar/: polybar/**
-    ~/.config/dunst/dunstrc: dunst/dunstrc
+    ~/.config/dunst/: dunst/**
     ~/.config/bspwm/: bspwm/**
     ~/.config/gtk-3.0/: themes/gtk/**
     ~/.config/alacritty/alacritty.yml: terminals/alacritty.yml
+    ~/.config/kitty/: kitty/**
     ~/.wallpapers/: wallpapers/**
     ~/.profile: themes/qt
     ~/.themes/Fantome: gtk-theme-collections/Fantome
@@ -31,8 +34,6 @@
 - create:
     ~/Projects:
 - clean: ['~']
-- create:
-    - ~/.config/nvim/plug
 - pip:
     file: requirements.txt
     binary: /usr/bin/pip
